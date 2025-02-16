@@ -10,6 +10,24 @@ And every hook in React! or if you prefer, you could make your own hook, it's up
 
 This fork is still in development, i'm working to make it perfect for you, adding features to improve your coding time 👨🏻‍💻 so, be patient!
 
+## Installing
+
+###### First, create a ReactJS project:
+
+```shell
+npx create-react-app YourAppName
+```
+
+For more info, visit [React's page](https://react.dev/learn/creating-a-react-app)
+
+#### Then, install my fork:
+
+```shell
+npm i webui-fork
+```
+
+
+
 ## UI Elements
 
 For now, you have this primitive elements to use!:
@@ -94,7 +112,7 @@ That's all! Easy, right? 🎉
 
 
 
-## Usage Examples
+## Usage Example
 
 
 
@@ -136,4 +154,3 @@ export default function App() {
     ])
 };
 ```
-
