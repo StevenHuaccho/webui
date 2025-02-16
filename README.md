@@ -100,9 +100,7 @@ That's all! Easy, right? 🎉
 
 ```tsx
 import { useState } from 'react';
-import ContentView, { Stack, Text, Button, Image } from './components/ui/Elements.tsx';
-import useCondition from './components/ui/proto/utils/conditional.ts';
-import Colors from './components/ui/proto/utils/Colors.tsx';
+import { ContentView, Stack, Text, Button, Image, useCondition, Colors } from 'webui-fork';
 
 export default function App() { 
   const [wasClicked, setWasClicked] = useState(false);
