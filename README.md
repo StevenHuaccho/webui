@@ -88,7 +88,7 @@ export class Text extends ElementProperties {
         this.content = content;
     }
 
-    add(): JSX.Element {
+    override add(): JSX.Element {
         return <span style={this.getStyles()}>{this.content}</span>;
     }
 }
